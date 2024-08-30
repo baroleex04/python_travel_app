@@ -1,0 +1,12 @@
+<h1>Welcome to eating and travelling app!</h1>
+
+{% if last_five_dishes %}
+    <ul>
+    {% for dish in last_five_dishes %}
+    <li><a href="{% url 'travel:detail' dish.id %}">{{ dish.dish_name }}</a></li>    
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No dishes are available.</p>
+{% endif %} 
+
