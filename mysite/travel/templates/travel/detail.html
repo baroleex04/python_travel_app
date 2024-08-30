@@ -6,8 +6,20 @@
 <body>
     <h1>Here is your dish!</h1>
     <p>{{dish.dish_name}}</p>
-    {{ dish.embedded_code|safe }}
-    <script async src="https://www.tiktok.com/embed.js"></script>
+    <div>
+        {{ dish.embedded_code|safe }} 
+        {% comment %} safe to render as code {% endcomment %}
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
     <p>Giá cả món ăn: {{dish.price}}</p>
+    <p>Địa chỉ: đường {{address.street_name}}, phường {{address.ward}}, quận {{address.district}}, {{address.city}}</p>
+    <p>Link menu (chưa có menu chỉ có link tới video tiktok): <a href="{{dish.menu_link}}" target="_blank">menu</a></p>
+    <p>Số lượt like: {{dish.vote_like}}</p>
+    <form action="#" method="get">
+        <input type="submit" value="Like" name="likebtn">
+    </form>
+    <a href="{%url 'travel:index'%}">
+        <button>Trở về trang chủ</button>
+    </a>
 </body>
 </html>

@@ -7,6 +7,7 @@ class Dish(models.Model):
     add_date = models.DateTimeField("date added")
     price = models.CharField(max_length=200)
     menu_link = models.CharField(max_length=200)
+    vote_like = models.IntegerField(default=0)
     def __str__(self):
         return self.embedded_code
     
@@ -17,7 +18,7 @@ class Address(models.Model):
     ward = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
     def __str__(self):
-        return self.street_name + ", district" + self.district + ", ward" + self.ward + ", " + self.city
+        return self.street_name
     
     
     
