@@ -1,5 +1,7 @@
 <h1>Welcome to eating and travelling app!</h1>
+{% load static %}
 
+<link rel="stylesheet" href="{% static 'travel/style.css' %}">
 {% if last_five_dishes %}
     <ul>
     {% for dish in last_five_dishes %}
