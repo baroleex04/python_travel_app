@@ -13,6 +13,7 @@ class Dish(models.Model):
     
 class Address(models.Model):
     dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
+    number = models.CharField(max_length=50)
     street_name = models.CharField(max_length=50)
     district = models.CharField(max_length=50)
     ward = models.CharField(max_length=20)
